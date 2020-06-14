@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load render_table from django_tables2 %}
+
+{% block content %}
+
+
+<div class="container col-md-10 mx-auto">
+<h2 class="display-4">Votre Dashboard</h2>
+<div class="card p-4">
+    <div class="container p-4">
+        <h4>Statistiques :</h4>
+        <div class="container">
+            <div class="row mt-4">
+                 <div class="col-4 px-2">
+                    <h5>radar statistic par Category : </h5>
+                    {{category_stat.as_html}}
+                </div>
+                <div class="col-8 px-2">
+                    <h5>type line statistic par jour : </h5>
+                    {{ daily_stat.as_html }}
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+</div>
+<div class="card my-3">
+    <div class="container p-4">
+        <h4>Chiffre d'Affaire :</h4>
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-6 px-2">
+                    <h5>par fournisseur</h5>
+                    {% render_table fournisseur_table %}
+                </div>
+                <div class="col-6 px-2">
+                    <h5>par client</h5>
+                    {% render_table client_table %}
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+</div>
+    
+    
+    
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+   {% load bootstrap4 django_tables2 %}
+    <div class="container">
+          <div class="card">
+              <h2>Suppression d'une ligne </h2>
+                <br>
+                <form method="post">{% csrf_token %}
+                <p>Confirmez-vous la suppression de {{ object }} ?</p>
+                <button type="submit" class="btn btn-danger">Confirmer</button>
+                <a href="{{request.META.HTTP_REFERER}}" class="btn btn-secondary">Annuler</a>
+                </form>
+          </div>
+    </div>
+{% endblock %}

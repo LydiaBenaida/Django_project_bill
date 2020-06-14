@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+   {% load bootstrap4 django_tables2 crispy_forms_tags  %}
+  <div class="container">
+          <div class="card">
+               <div class="card col-8 mx-auto my-5 p-3">
+
+                             <h4>Modifier les données  </h4>
+                    <form action="" method="POST" >
+
+
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <br>
+
+
+                        <button class="btn btn-success" >Sauvgarder</button>
+                    </form>
+                </div>
+
+          </div>
+  </div>
+{% endblock %}

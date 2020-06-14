@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+        <meta charset="utf-8">
+         {% load static %}
+        {% load bootstrap4 django_tables2 %}
+        {% bootstrap_css %}         {# Embed Bootstrap CSS #}
+        {% bootstrap_javascript jquery='full' %}  {# Embed Bootstrap JS+jQuery #}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"></script>
+
+      </head>
+
+           <header >
+               <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Facturation</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="http://127.0.0.1:8000/bill/clients/">Client </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:8000/bill/factures/">Facture <span class="sr-only">(current)</span></a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:8000/bill/fournisseur/">Fournisseur <span class="sr-only">(current)</span></a>
+          </li>
+         </li>
+            <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:8000/bill/">Dashbord<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+               <br>
+               <br>
+
+
+        <img src="{% static 'img/cover.jpg' %}"  style="width: 100%" alt="hih">
+           </header>
+
+                <br><br><br>
+
+            <body >
+
+               <div class="row">
+
+
+                   </div>
+
+                    <div class="col-12">
+                        {% block content %}  {% endblock %}
+                     </div>
+               </div>
+            </body>
+
+            <footer>
+
+
+            </footer>
+</html>
